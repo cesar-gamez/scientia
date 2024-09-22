@@ -18,6 +18,7 @@
     "electron-reloader": "^1.2.3"
   },
   "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.654.0",
     "7zip-bin": "^5.0.3",
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
@@ -31,6 +32,7 @@
     "async": "^0.9.2",
     "async-exit-hook": "^2.0.1",
     "at-least-node": "^1.0.0",
+    "aws-sdk": "^2.1691.0",
     "axios": "^1.7.7",
     "balanced-match": "^1.0.2",
     "binary-extensions": "^2.2.0",
