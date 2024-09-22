@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="title-bar">
+      <span class="document-name" id="documentName">no file selected</span>
+
+      <div class="menu-section">
+        <button id="openDocumentBtn">
+          <span class="material-icons"> launch </span>
+        </button>
+        <button id="createDocumentBtn">
+          <span class="material-icons"> note_add </span>
+        </button>
+        <button id="saveDocumentBtn">
+          <span class="material-icons"> save </span>
+        </button>
+      </div>
+    </div>
+    <main>
+      <!-- Textarea for user to input content -->
+      <textarea id="fileTextarea" placeholder="Type your content here..."></textarea>
+
+      <!-- Input field for user to specify filename -->
+      <input type="text" id="fileNameInput" placeholder="Enter file name" />
+    </main>
+
+    <script>
+      // Function to save the text as a .txt file
+      document.getElementById('saveDocumentBtn').addEventListener('click', function () {
+        // Get the text from the textarea
+        const text = document.getElementById('fileTextarea').value;
+
+        // Get the file name input from the user
+        let fileName = document.getElementById('fileNameInput').value;
+
+        // Set default filename if no input provided
+        if (!fileName) {
+          fileName = 'document'; // Default filename
+        }
+
+        // Create a new Blob object using the text from the textarea
+        const blob = new Blob([text], { type: 'text/plain' });
+
+        // Create a temporary link element to trigger the download
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `${fileName}.txt`; // Use the user-specified filename or the default name
+
+        // Append the link to the body and click it to initiate download
+        document.body.appendChild(link);
+        link.click();
+
+        // Remove the link from the document after the download
+        document.body.removeChild(link);
+      });
+    </script>
+  </body>
+</html>

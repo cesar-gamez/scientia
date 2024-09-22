@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Scientia</title>
+</head>
+
+<body>
+    
+    <div id="first-background">
+    <div id="container">
+        <button id="parseTextIntoModel">Ask Our Model</button>
+        
+        <div id="notes-rectangle"> <!-- Notes Area --> <!-- aint no party like a diddy party -->
+            <div> <!-- Header (author) -->
+                <div id="top-left-big-header">
+                    <div id="inner-header"></div>
+                </div>
+            </div>
+            <div> <!-- Header (filepath) -->
+                <div id="top-left-inner-header"></div>
+            </div>
+            <div> <!-- Notes Text Area --> 
+                <div>
+                    <textarea id="notes-text-area" contenteditable="true" placeholder="Enter your notes here..."></textarea>
+                </div>
+                <div> <!-- Shadow effect -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI area -->
+        <div id = "ai-rectangle">
+            <!-- img and "any questions?" area -->
+            <div class = "question-format">
+
+                <!-- <img class="dot" src="../445.png"
+                alt="test1"> -->
+                <!--<p class = "question-text"> <b>Any questions? </b></p>-->
+                <textarea class="textarea" placeholder ="Any questions?"></textarea>
+                <ul id="output"></ul>
+
+            </div>
+            <!-- Shadow effect -->
+                        
+        </div>
+    </div>    
+</div>
+<script src="main.js"></script>
+</body>       
+        
+
+</html>
